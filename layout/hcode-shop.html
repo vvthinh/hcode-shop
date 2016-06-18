@@ -1,0 +1,74 @@
+{{#extend "default"}} {{#content "main"}}
+<!-- content section -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="shorting clearfix xs-margin-top-three">
+                    <div class="col-md-8 col-sm-8 grid-nav">
+                        <a href="http://www.themezaa.com/html/h-code/shop-with-sidebar-list.html"><i class="fa fa-bars"></i></a>
+                        <a href="shop-full-width.html#"><i class="fa fa-th"></i></a>
+                        <p class="text-uppercase letter-spacing-1">Showing 1–12 of 22 results</p>
+                    </div>
+                    <div class="col-md-3 col-sm-3 pull-right">
+                        <div class="select-style input-round med-input shop-shorting-full no-border">
+                            <select>
+                                <option value="">Select sort by</option>
+                                <option value="">By popularity</option>
+                                <option value="">By rating</option>
+                                <option value="">Price: low to high</option>
+                                <option value="">Price: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-listing margin-three">
+                    <!-- shop item -->
+                    {{#each collections.hcode-shop }} 
+                    
+                    
+                         <div class="col-md-4 col-sm-6">
+                        <div class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top">
+                          
+                           <a href="/{{path}}">
+                              {{#each this.image}}
+                              {{#if @first}}  
+                                <img src="{{this}}" alt="" />
+                               {{/if}} 
+                                 {{/each}}  
+                            </a>     
+                        
+                            <span class="product-name text-uppercase"><a href="/{{path}}">{{name}}</a></span>
+                            <span class="price black-text"><del>{{old_price}}</del>{{price}}</span>
+                            <span class="onsale onsale-style-2">Sale</span>
+                            <div class="quick-buy">
+                                <div class="product-share">
+                                    <a href="shop-full-width.html#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                    <a href="shop-full-width.html#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Compare"><i class="fa fa-refresh"></i></a>
+                                    <a href="http://www.themezaa.com/html/h-code/shop-cart.html" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end shop item -->
+                      
+                    {{/each}}
+                   
+                </div>
+                <!-- pagination -->
+                <div class="pagination margin-ten no-margin-bottom">
+                    <a href="shop-full-width.html#"><img src="/images/arrow-pre-small.png" alt="" /></a>
+                    <a href="shop-full-width.html#">1</a>
+                    <a href="shop-full-width.html#">2</a>
+                    <a href="shop-full-width.html#" class="active">3</a>
+                    <a href="shop-full-width.html#">4</a>
+                    <a href="shop-full-width.html#">5</a>
+                    <a href="shop-full-width.html#"><img src="/images/arrow-next-small.png" alt="" /></a>
+                </div>
+                <!-- end pagination -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end content section -->
+{{/content}} {{/extend}}

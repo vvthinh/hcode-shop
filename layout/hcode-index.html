@@ -1,0 +1,491 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>H-Code | Responsive & Multi-Purpose One/Multi Page Template</title>
+        <meta name="description" content="H-Code - A premium portfolio template from ThemeZaa">
+        <meta name="keywords" content="">
+        <meta charset="utf-8">
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{{site.ref-domain}}images/favicon.png">
+        <link rel="apple-touch-icon" href="{{site.ref-domain}}images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{site.ref-domain}}images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{site.ref-domain}}images/apple-touch-icon-114x114.png">
+        <!-- animation -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/animate.css" />
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/bootstrap.css" />
+        <!-- et line icon -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/et-line-icons.css" />
+        <!-- font-awesome icon -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
+        <!-- revolution slider -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/extralayers.css" />
+        <link rel="stylesheet" href="{{site.ref-domain}}css/settings.css" />
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/magnific-popup.css" />
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/owl.carousel.css" />
+        <link rel="stylesheet" href="{{site.ref-domain}}css/owl.transitions.css" />
+        <link rel="stylesheet" href="{{site.ref-domain}}css/full-slider.css" />
+        <!-- text animation -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/text-effect.css" />
+        <!-- hamburger menu  -->
+        <!-- <link rel="stylesheet" href="{{site.ref-domain}}css/menu-hamburger.css" /> -->
+        <!-- common -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/style.css" />
+        <!-- responsive -->
+        <link rel="stylesheet" href="{{site.ref-domain}}css/responsive.css" />
+        <!--[if IE]>
+            <link rel="stylesheet" href="{{site.ref-domain}}css/style-ie.css" />
+        <![endif]-->
+        <!--[if IE]>
+            <script src="{{site.ref-domain}}js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- navigation panel -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom bg-white " role="navigation">
+            <div class="container">
+                <div class="row">
+                    <!-- logo -->
+                    <div class="col-md-2 pull-left"><a class="logo-light" href="index.html">
+                      <!-- <img alt="" src="{{site.ref-domain}}images/logo-light.png" class="logo" /> -->
+                      {{logo.name}}
+                    </a>
+                      <a class="logo-dark" href="index.html">
+                        {{logo.name}}
+                        <!-- <img alt="" src="{{site.ref-domain}}images/logo-light.png" class="logo" /> -->
+                      </a></div>
+                    <!-- end logo -->
+                    <!-- search and cart  -->
+                    <div class="col-md-2 no-padding-left search-cart-header pull-right">
+                        <div id="top-search">
+                            <!-- nav search -->
+                            <a href="#search-header" class="header-search-form"><i class="fa fa-search search-button"></i></a>
+                            <!-- end nav search -->
+                        </div>
+                        <!-- search input-->
+                        <form id="search-header" method="post" action="#" name="search-header" class="mfp-hide search-form-result">
+                            <div class="search-form position-relative">
+                                <button type="submit" class="fa fa-search close-search search-button"></button>
+                                <input type="text" name="search" class="search-input" placeholder="Enter your keywords..." autocomplete="off">
+                            </div>
+                        </form>
+                        <!-- end search input -->
+                        <div class="top-cart">
+                            <!-- nav shopping bag -->
+                            <!-- <a href="#" class="shopping-cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <div class="subtitle">(1) Items</div>
+                            </a> -->
+                            <!-- end nav shopping bag -->
+                            <!-- shopping bag content -->
+                            <div class="cart-content">
+                                <ul class="cart-list">
+                                    <li>
+                                        <a title="Remove item" class="remove" href="#">×</a>
+                                        <a href="#">
+                                            <img width="90" height="90" alt="" src="{{site.ref-domain}}images/shop-cart.jpg">Leather Craft
+                                        </a>
+                                        <span class="quantity">1 × <span class="amount">$160</span></span>
+                                        <a href="#">Edit</a>
+                                    </li>
+                                </ul>
+                                <p class="total">Subtotal: <span class="amount">$160</span></p>
+                                <p class="buttons">
+                                    <a href="shop-cart.html" class="btn btn-very-small-white no-margin-bottom margin-seven pull-left no-margin-lr">View Cart</a>
+                                    <a href="shop-checkout.html" class="btn btn-very-small-white no-margin-bottom margin-seven no-margin-right pull-right">Checkout</a>
+                                </p>
+                            </div>
+                            <!-- end shopping bag content -->
+                        </div>
+                    </div>
+                    <!-- end search and cart  -->
+                    <!-- toggle navigation -->
+                    <div class="navbar-header col-sm-8 col-xs-2 pull-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    </div>
+                    <!-- toggle navigation end -->
+                    {{#block "menu"}}
+                    {{> menu}}
+                    {{/block}}
+                </div>
+            </div>
+        </nav>
+        <!--end navigation panel -->
+
+        <!-- head section -->
+        <section class="page-title parallax3 parallax-fix page-title-large page-title-shop">
+            <div class="opacity-light bg-dark-gray"></div>
+            <img class="parallax-background-img" src="{{site.ref-domain}}images/parallax-img47.jpg" alt="" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 wow fadeIn">
+                        <!-- page title tagline -->
+                        <span class="text-uppercase white-text">{{slideshow.title}}</span>
+                        <!-- end title tagline -->
+                        <!-- page title -->
+                        <h1 class="white-text">{{slideshow.description}}</h1>
+                        <!-- end page title -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 breadcrumb text-uppercase margin-three no-margin-bottom wow fadeIn">
+                        <!-- breadcrumb -->
+                        <ul>
+                            <li><a class="white-text" href="#">Home</a></li>
+                            <li class="white-text"><a class="white-text" href="#">Shop</a></li>
+                            <li class="white-text">Collection</li>
+                        </ul>
+                        <!-- end breadcrumb -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end head section -->
+        <script src="https://rawgit.com/mikeric/rivets/v0.8.1/dist/rivets.bundled.min.js"></script>
+        <script type="text/javascript">
+//            var data = {
+//                SKU : "",
+//                customer : {
+//                    name : "",
+//                    phone : "",
+//                    email: ""
+//                }
+//            };
+            var data = {
+                "post": {
+                    "customer" : {
+                        "name" : "",
+                        "phone" : "",
+                        "email" : ""
+                    },
+                    "order" : {
+                        "SKU" : "",
+                        "productName": "",
+                        "productPrice": ""
+                    }
+                }
+            };
+
+            data.selectProduct = function(sku, productName, productPrice) {
+                console.log('chon san pham', sku, productName, productPrice);
+                data.post.order.SKU = sku;
+                data.post.order.productName = productName;
+                data.post.order.productPrice = productPrice;
+            };
+
+            // thêm khả năng so sánh giá trị cho rivet sử dụng với |
+            rivets.formatters['=='] = function(value, arg) {
+                return value == arg;
+            };
+
+            rivets.formatters.with = function(target) {
+                var args = Array.prototype.slice.call(arguments);
+                args.splice(0,1);
+
+                return function(evt) {
+                    var cpy = args.slice();
+                    Array.prototype.push.apply(cpy, Array.prototype.slice.call(arguments));
+                    return target.apply(this, cpy)
+                }
+            };
+
+            // chi co the set 1 property
+            rivets.formatters.set = function() {
+                var args = Array.prototype.slice.call(arguments);
+                args.splice(0, 1);
+                return function(evt) {
+                    var rivetData = Array.prototype.splice.call(arguments, 1, 2)[0]; // remove event Object
+                    var cpy = args.slice();
+                    // TODO support dot in key to access sub property
+                    return rivetData[cpy[0]] = cpy[1];
+                }
+            }
+        </script>
+        <!-- content section -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="shorting clearfix xs-margin-top-three">
+                            <div class="col-md-8 col-sm-8 grid-nav">
+                                <a href="shop-with-sidebar-list.html"><i class="fa fa-bars"></i></a>
+                                <a href="#"><i class="fa fa-th"></i></a>
+                                <p class="text-uppercase letter-spacing-1">Hiển thị {{products.length}} sản phẩm</p>
+                            </div>
+                            <!-- <div class="col-md-3 col-sm-3 pull-right">
+                                <div class="select-style input-round med-input shop-shorting-full no-border">
+                                    <select>
+                                        <option value="">Select sort by</option>
+                                        <option value="">By popularity</option>
+                                        <option value="">By rating</option>
+                                        <option value="">Price: low to high</option>
+                                        <option value="">Price: high to low</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="product-listing margin-three">
+                          {{#each products}}
+                            <!-- shop item -->
+                            <div class="col-md-4 col-sm-6" rv-on-click="selectProduct |with {{SKU}} '{{name}}' '{{price}}'">
+                                <div class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top">
+                                    <a class="modal-popup no-margin-bottom" href="#modal-popup-{{this.SKU}}"><img src="{{../site.ref-domain}}{{this.image}}" alt=""/></a>
+                                    <span class="product-name text-uppercase"><a href="shop-single-product.html">{{this.name}}</a></span>
+                                    {{#if this.old_price}}
+                                      <span class="price black-text"><del>{{this.old_price}}đ</del>{{this.price}}đ</span>
+                                    {{else}}
+                                      <span class="price black-text">{{this.price}}đ</span>
+                                    {{/if}}
+
+                                    <!-- <span class="onsale onsale-style-2">Sale</span> -->
+                                    <div class="quick-buy">
+                                        <div class="product-share">
+                                            <!-- <a href="#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
+                                            <a href="#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Compare"><i class="fa fa-refresh"></i></a> -->
+                                            <a class="highlight-button btn btn-small no-margin-right modal-popup no-margin-bottom" href="#modal-popup-{{this.SKU}}">Mua Nhanh</a>
+                                            <div id="modal-popup-{{this.SKU}}" class="white-popup-block mfp-hide col-lg-8 col-md-8 col-sm-9 col-xs-11 center-col bg-white text-center modal-popup-main">
+                                              <div class="row" >
+                                                <div class="col-lg-7 col-md-7 bg-white ">
+                                                  <img src="{{../site.ref-domain}}{{this.image}}" alt=""/>
+                                                </div>
+                                                <div class=".off-lg-7 .off-log-7 col-lg-5 col-md-5">
+                                                  <span class="slider-subtitle5 black-text no-margin-bottom">{{this.name}}</span>
+                                                  <span class="slider-subtitle6 black-text no-margin-bottom">Giá:{{this.price}} VNĐ</span>
+                                                  <div class="separator-line no-margin-lr"></div>
+                                                  <div class="form-group no-margin-bottom">
+                                                      <!-- label  -->
+                                                      <label for="username" class="text-uppercase" >Tên Khách Hàng</label>
+                                                      <!-- end label  -->
+                                                      <!-- input  -->
+                                                      <input type="text" name="username" rv-value="post.customer.name">
+                                                      <!-- end input  -->
+                                                  </div>
+                                                  <div class="form-group no-margin-bottom">
+                                                      <!-- label  -->
+                                                      <label for="phone" class="text-uppercase">Số Điện Thoại</label>
+                                                      <!-- end label  -->
+                                                      <!-- input  -->
+                                                      <input type="text" name="phone" rv-value="post.customer.phone">
+                                                      <!-- end input  -->
+                                                  </div>
+                                                  <div class="form-group no-margin-bottom">
+                                                      <!-- label  -->
+                                                      <label for="email" class="text-uppercase">Email</label>
+                                                      <!-- end label  -->
+                                                      <!-- input  -->
+                                                      <input type="text" name="email" rv-value="post.customer.email">
+                                                      <!-- end input  -->
+                                                  </div>
+                                                  <!-- <label for="username" class="text-uppercase">Tên Khách Hàng</label>
+                                                  <input type="text" class="form-control input-round big-input text-lowercase" placeholder="Tên Khách Hàng">
+                                                  <label for="username" class="text-uppercase">Số Điện Thoại</label>
+                                                  <input type="text" class="form-control input-round big-input text-lowercase" placeholder="Số Điện Thoại"> -->
+                                                  <button class="highlight-button btn button popup-modal-dismiss no-margin" onclick="Gui()">Mua</button>
+
+                                                </div>
+                                              </div>
+
+                                            </div>
+                                            <!-- <a href="shop-cart.html" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Mua Nhanh"><i class="fa fa-shopping-cart"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            <!-- end shop item -->
+
+                        </div>
+                        <!-- pagination -->
+                        <!-- <div class="pagination margin-ten no-margin-bottom">
+                            <a href="#"><img src="{{site.ref-domain}}images/arrow-pre-small.png" alt=""/></a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#" class="active">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#"><img src="{{site.ref-domain}}images/arrow-next-small.png" alt=""/></a>
+                        </div> -->
+                        <!-- end pagination -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end content section -->
+
+        <script type="text/javascript">
+            rivets.bind(document.querySelector('body'), data);
+
+            function Gui() {
+                var rq = new XMLHttpRequest();
+                rq.open('POST', 'http://admincp.lici.vn/api/order', true);
+                rq.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                rq.send(JSON.stringify(data.post));
+                console.log('gui data', data.post);
+            }
+        </script>
+        <!-- footer -->
+        <footer>
+            <div class=" bg-white footer-top">
+                <div class="container">
+                    <div class="row margin-four">
+                        <!-- phone -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-phone small-icon black-text"></i><h6 class="black-text margin-two no-margin-bottom">{{contact.phone}}</h6></div>
+                        <!-- end phone -->
+                        <!-- address -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-map-pin small-icon black-text"></i><h6 class="black-text margin-two no-margin-bottom">{{contact.address}}</h6></div>
+                        <!-- end address -->
+                        <!-- email -->
+                        <div class="col-md-4 col-sm-4 text-center"><i class="icon-envelope small-icon black-text"></i><h6 class="margin-two no-margin-bottom"><a href="mailto:{{contact.email}}" class="black-text">{{contact.email}}</a></h6></div>
+                        <!-- end email -->
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-middle">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 footer-link1 xs-display-none">
+                        <!-- headline -->
+                        <h5>{{aboutus.header}}</h5>
+                        <!-- end headline -->
+                        <!-- text -->
+                        <p class="footer-text">{{aboutus.description}}</p>
+                        <!-- end text -->
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4 footer-link2 col-md-offset-3" style="display:none">
+                        <!-- headline -->
+                        <h5>Company</h5>
+                        <!-- end headline -->
+                        <!-- link -->
+                        <ul>
+                            <li><a href="about-us.html">About Company</a></li>
+                            <li><a href="about-us.html">What We Do</a></li>
+                            <li><a href="about-us.html">What We Think</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4  footer-link3" style="display:none">
+                        <!-- headline -->
+                        <h5>Services</h5>
+                        <!-- end headline -->
+                        <!-- link -->
+                        <ul>
+                            <li><a href="services.html">Web Development</a></li>
+                            <li><a href="services.html">Graphic Design</a></li>
+                            <li><a href="services.html">Copywriting</a></li>
+                            <li><a href="services.html">Online Marketing</a></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4  footer-link4" style="display:none">
+                        <!-- headline -->
+                        <h5>Introduction</h5>
+                        <!-- end headline -->
+                        <!-- link -->
+                        <ul>
+                            <li><a href="team-members.html">Team Members</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="our-clients.html">Our Clients</a></li>
+                            <li><a href="careers.html">Careers With Us</a></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                </div>
+                <div class="wide-separator-line bg-mid-gray no-margin-lr margin-three no-margin-bottom"></div>
+                <div class="row margin-four no-margin-bottom">
+                    <div class="col-md-6 col-sm-12 sm-text-center sm-margin-bottom-four">
+                        <!-- link -->
+                        <ul class="list-inline footer-link text-uppercase">
+                            <li><a href="about-us.html">About</a></li>
+                            <li><a href="blog-masonry-3columns.html">Blog</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                            <li><a href="contact-us.html">Contact</a></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                    <div class="col-md-6 col-sm-12 footer-social text-right sm-text-center">
+                        <!-- social media link -->
+                        <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                        <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a target="_blank" href="https://plus.google.com"><i class="fa fa-google-plus"></i></a>
+                        <a target="_blank" href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                        <!-- end social media link -->
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-dark-gray footer-bottom">
+                <div class="container">
+                    <div class="row margin-three">
+                        <!-- copyright -->
+                        <div class="col-md-6 col-sm-6 col-xs-12 copyright text-left letter-spacing-1 xs-text-center xs-margin-bottom-one">
+                            &copy; powered by <a href="http://vinaas.com/vn/index.html">VinaAS</a>.
+                        </div>
+                        <!-- end copyright -->
+                        <!-- logo -->
+                        <div class="col-md-6 col-sm-6 col-xs-12 footer-logo text-right xs-text-center">
+                            <a href="index.html">
+                              <!-- <img src="{{site.ref-domain}}images/logo-light-gray.png" alt=""/> -->
+                              {{logo.name}}
+                            </a>
+                        </div>
+                        <!-- end logo -->
+                    </div>
+                </div>
+            </div>
+            <!-- scroll to top -->
+            <a href="javascript:;" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+            <!-- scroll to top End... -->
+        </footer>
+        <!-- end footer -->
+
+        <!-- javascript libraries / javascript files set #1 -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.min.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/modernizr.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/bootstrap.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/bootstrap-hover-dropdown.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/skrollr.min.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/smooth-scroll.js"></script>
+         <!-- jquery appear -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.appear.js"></script>
+        <!-- animation -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/wow.min.js"></script>
+        <!-- page scroll -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/page-scroll.js"></script>
+        <!-- easy piechart-->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.easypiechart.js"></script>
+        <!-- parallax -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.parallax-1.1.3.js"></script>
+        <!--portfolio with shorting tab -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.isotope.min.js"></script>
+        <!-- owl slider  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/owl.carousel.min.js"></script>
+        <!-- magnific popup  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/popup-gallery.js"></script>
+        <!-- text effect  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/text-effect.js"></script>
+        <!-- revolution slider  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.revolution.js"></script>
+        <!-- counter  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/counter.js"></script>
+         <!-- countTo -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.countTo.js"></script>
+        <!-- fit videos  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/jquery.fitvids.js"></script>
+        <!-- imagesloaded  -->
+        <script type="text/javascript" src="{{site.ref-domain}}js/imagesloaded.pkgd.min.js"></script>
+        <!-- hamburger menu-->
+        <script type="text/javascript" src="{{site.ref-domain}}js/classie.js"></script>
+        <!-- <script type="text/javascript" src="{{site.ref-domain}}js/hamburger-menu.js"></script> -->
+        <!-- setting -->
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
+</html>
