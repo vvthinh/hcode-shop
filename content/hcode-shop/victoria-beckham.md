@@ -8,11 +8,12 @@
    "layout":"single-product.html",
    "date":"2015-11-01",
     "name":"Victoria Beckham",
-     "price":"450,000",
-    "old_price":"750,000",
-    "SKU":"01",
+     "price":"45000",
+    "old_price":"75000",
+    "SKU":"06",
     "description":"Victoria Beckham",
-    "category":"Asymmetric",
+    "category":"Asymme",
+     "relate-product":"Asymme",
      "image":[
             "http://www.themezaa.com/html/h-code/images/product18.jpg",
             "http://www.themezaa.com/html/h-code/images/product24.jpg",
@@ -55,7 +56,7 @@
                "Description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text."
             }
          ]
-         
+
 
    
 }

@@ -1,4 +1,54 @@
 {{#extend "default"}} {{#content "main"}}
+<script type="text/javascript">
+    var data={};
+    var tam=Lockr.get('Quantity');
+    if(tam==undefined || tam <=0){
+       data.Quantity=1;
+    }
+    else
+    {
+        data.Quantity=tam;
+    }
+    
+    data.selectProduct = function(sku) {
+    var detail=Lockr.get('shopcart');
+    detail.filter(x=>x.SKU===sku)[0].Quantity=data.Quantity;
+    detail.filter(x=>x.SKU===sku)[0].SubTotal=detail.filter(x=>x.SKU===sku)[0].Price*data.Quantity;
+    Lockr.set('shopcart',detail);     
+     };
+      // thêm khả năng so sánh giá trị cho rivet sử dụng với |
+rivets.formatters['=='] = function(value, arg) {
+    return value == arg;
+};
+
+rivets.formatters.with = function(target) {
+
+    var args = Array.prototype.slice.call(arguments);
+    //console.log("args",JSON.stringify(args.splice(0,1)));
+    args.splice(0, 1);
+
+
+    return function(evt) {
+        var cpy = args.slice();
+        Array.prototype.push.apply(cpy, Array.prototype.slice.call(arguments));
+        //console.log(target.apply(this, cpy));
+        return target.apply(this, cpy)
+    }
+};
+
+// chi co the set 1 property
+rivets.formatters.set = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.splice(0, 1);
+    return function(evt) {
+        var rivetData = Array.prototype.splice.call(arguments, 1, 2)[0]; // remove event Object
+        var cpy = args.slice();
+        // TODO support dot in key to access sub property
+        return rivetData[cpy[0]] = cpy[1];
+    }
+}
+
+</script>
 <section class="content-top-margin page-title page-title-small border-bottom-light border-top-light">
     <div class="container">
         <div class="row">
@@ -16,6 +66,7 @@
                 <a href="shop-single-product.html#" class="border-right"><i class="fa fa-angle-left"></i> Previous</a>
                 <a href="shop-single-product.html#">Next<i class="fa fa-angle-right"></i></a>
                 <!-- end next/previous -->
+                
             </div>
         </div>
     </div>
@@ -82,22 +133,17 @@
                     <!-- end product size -->
                 </div>
                 <div class="col-md-3 col-sm-3 no-padding-left margin-five">
-                    <div class="select-style med-input xs-med-input shop-shorting-details no-border-round">
+                   
                         <!-- product qty -->
-                        <select>
-                            <option value="">QTY</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                        </select>
+                       <input type="number" rv-value="Quantity">
                         <!-- end product qty -->
-                    </div>
+                   
+                   
                 </div>
+
                 <div class="col-md-9 col-sm-9 no-padding margin-five">
                     <!-- add to bag button -->
-                    <a class="highlight-button-dark btn btn-medium button" href="http://www.themezaa.com/html/h-code/shop-cart.html"><i class="icon-basket"></i> Add To Cart</a>
+                    <a class="highlight-button-dark btn btn-medium button" href="http://localhost:8088/shop-cart.html" rv-on-click="selectProduct |with {{this.SKU}}"><i class="icon-basket"></i> Add To Cart</a>
                     <!-- end add to bag button -->
                 </div>
                 <div class="col-lg-4 col-md-5 col-sm-3 no-padding-left">
@@ -263,8 +309,9 @@
             <!-- related products slider -->
             <div id="shop-products" class="owl-carousel owl-theme dark-pagination owl-no-pagination owl-prev-next-simple">
                 {{#each collections.hcode-shop}}
-                 
-                <!-- shop item -->
+                
+                   
+                  <!-- shop item -->
                 <div class="item">
                     <div class="home-product text-center position-relative overflow-hidden">
                        
@@ -296,5 +343,9 @@
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+rivets.bind(document.querySelector('body'),data);
+</script>
 <!-- end content section -->
 {{/content}} {{/extend}}

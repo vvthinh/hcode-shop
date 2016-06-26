@@ -175,6 +175,7 @@
                 data.post.order.SKU = sku;
                 data.post.order.productName = productName;
                 data.post.order.productPrice = productPrice;
+                console.log("args",JSON.stringify(data.post.order));
             };
 
             // thêm khả năng so sánh giá trị cho rivet sử dụng với |
@@ -184,11 +185,14 @@
 
             rivets.formatters.with = function(target) {
                 var args = Array.prototype.slice.call(arguments);
+                //console.log("args",JSON.stringify(args.splice(0,1)));
                 args.splice(0,1);
+
 
                 return function(evt) {
                     var cpy = args.slice();
                     Array.prototype.push.apply(cpy, Array.prototype.slice.call(arguments));
+                    //console.log(target.apply(this, cpy));
                     return target.apply(this, cpy)
                 }
             };

@@ -1,10 +1,9 @@
 ---json
 {
 "title": "Hcode Shop",
-
-"description": "Index Page",
+"url":"/",
+"description": "Hcode shop",
 "layout": "hcode-shop.html",
-"permalink": true,
- "function": "home"
+"permalink": true
 }
 ---

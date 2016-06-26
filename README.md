@@ -1,5 +1,3 @@
-# hcode-shop
-shopping cart
 ### Hướng dẫn sử dụng source EasyWeb Metalsmith
 #### Cài đặt
 * clone project (mặc định là branch master)
@@ -74,4 +72,4 @@ site.style = {
         browsers: ['last 2 versions', 'IE >= 9']
     }
 };
-
+```

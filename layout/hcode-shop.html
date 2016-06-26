@@ -1,4 +1,89 @@
-{{#extend "default"}} {{#content "main"}}
+{{#extend "default"}} {{#content "header" mode="append"}}
+
+<script type="text/javascript">
+var data = {
+    
+};
+
+data.selectProduct = function(sku, productName, productPrice,image,url) {
+
+    var shop = [];
+    var cart = {};
+    cart.SKU = sku;
+    cart.Name = productName;
+    cart.Price = productPrice;
+     cart.Image=image;
+     cart.Quantity = 1;
+     cart.Url=url;
+     cart.SubTotal=cart.Price;
+     
+    if (Lockr.get('shopcart') == undefined) {
+        
+        Lockr.set('shopcart',shop);
+         //Lockr.set('shopcart', cart);
+        //cart.Quantity = 1;
+       Lockr.sadd('shopcart', cart);
+     }
+    else{
+        shop=Lockr.get('shopcart');
+        if(shop.filter(x=>x.SKU===sku).length>0)
+        {
+          var data=shop.filter(x=>x.SKU===sku)[0];
+          data.Quantity=data.Quantity+1;
+          shop.filter(x=>x.SKU===sku)[0].Quantity=data.Quantity;
+          data.SubTotal=data.Quantity*data.Price;
+          shop.filter(x=>x.SKU===sku)[0].SubTotal=data.SubTotal;
+          //shop.filter(x=>x.SKU===sku)[0].Quantity;
+          Lockr.set('shopcart',shop);
+          console.log(data.SubTotal);
+        }
+        else
+        {   
+           
+            shop.push(cart);
+            Lockr.set('shopcart',shop);
+        }
+        //shop.splice(shop.indexOf(shop.filter(x=>x.SKU===sku)[0]),1);
+        
+        
+     }
+      
+ };
+
+// thêm khả năng so sánh giá trị cho rivet sử dụng với |
+rivets.formatters['=='] = function(value, arg) {
+    return value == arg;
+};
+
+rivets.formatters.with = function(target) {
+
+    var args = Array.prototype.slice.call(arguments);
+    //console.log("args",JSON.stringify(args.splice(0,1)));
+    args.splice(0, 1);
+
+
+    return function(evt) {
+        var cpy = args.slice();
+        Array.prototype.push.apply(cpy, Array.prototype.slice.call(arguments));
+        //console.log(target.apply(this, cpy));
+        return target.apply(this, cpy)
+    }
+};
+
+// chi co the set 1 property
+rivets.formatters.set = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.splice(0, 1);
+    return function(evt) {
+        var rivetData = Array.prototype.splice.call(arguments, 1, 2)[0]; // remove event Object
+        var cpy = args.slice();
+        // TODO support dot in key to access sub property
+        return rivetData[cpy[0]] = cpy[1];
+    }
+}
+</script>
+{{/content}} {{#content "main"}}
+<!-- content section -->
 <!-- content section -->
 <section>
     <div class="container">
@@ -24,36 +109,33 @@
                 </div>
                 <div class="product-listing margin-three">
                     <!-- shop item -->
-                    {{#each collections.hcode-shop }} 
-                    
-                    
-                         <div class="col-md-4 col-sm-6">
+                    {{#each collections.hcode-shop }}
+                    <div class="col-md-4 col-sm-6" rv-on-click="selectProduct |with {{SKU}} '{{name}}' '{{price}}' '{{this.image.[0]}}' '/{{path}}'">
                         <div class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top">
-                          
-                           <a href="/{{path}}">
+                            <a href="/{{path}}">
                               {{#each this.image}}
                               {{#if @first}}  
-                                <img src="{{this}}" alt="" />
+                                <img src="{{this}}" alt=""/>
                                {{/if}} 
                                  {{/each}}  
-                            </a>     
-                        
-                            <span class="product-name text-uppercase"><a href="/{{path}}">{{name}}</a></span>
-                            <span class="price black-text"><del>{{old_price}}</del>{{price}}</span>
-                            <span class="onsale onsale-style-2">Sale</span>
+                            </a>
+                            <span class="product-name text-uppercase"><a href="/{{path}}">{{this.name}}</a></span> {{#if this.old_price}}
+                            <span class="price black-text"><del>{{this.old_price}}</del>{{this.price}}</span>
+                            <span class="onsale onsale-style-2">Sale</span> {{else}}
+                            <span class="price black-text">{{this.price}}</span> {{/if}}
                             <div class="quick-buy">
                                 <div class="product-share">
-                                    <a href="shop-full-width.html#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Wishlist"><i class="fa fa-heart-o"></i></a>
-                                    <a href="shop-full-width.html#" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Compare"><i class="fa fa-refresh"></i></a>
-                                    <a href="http://www.themezaa.com/html/h-code/shop-cart.html" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart"><i class="fa fa-shopping-cart"></i></a>
+                            
+                                 
+                                    <a href="http://localhost:8088/shop-cart.html" class="highlight-button-dark btn btn-small no-margin-right quick-buy-btn" title="Add to Cart">Add Cart</i></a>
+                                   
+                                  
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end shop item -->
-                      
                     {{/each}}
-                   
                 </div>
                 <!-- pagination -->
                 <div class="pagination margin-ten no-margin-bottom">
@@ -71,4 +153,7 @@
     </div>
 </section>
 <!-- end content section -->
+<script type="text/javascript">
+rivets.bind(document.querySelector('body'), data);
+</script>
 {{/content}} {{/extend}}
