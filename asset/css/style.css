@@ -1939,7 +1939,7 @@ thead th.first { padding-left: 0 !important; }
 .travel-agency-slider h1 { font-size:50px; line-height: 60px;}
 .starting-from {letter-spacing:4px !important; font-size:12px !important;}
 .starting-from span { background: #ffc601; padding: 3px 12px; letter-spacing: 2px !important;}
-.dateline-search::before { color: #848484; content: "ÔÅ≥"; font-family: FontAwesome; font-size: 18px; position: absolute; right: 32px; top: 48px;}
+.dateline-search::before { color: #848484; content: "Ô?≥"; font-family: FontAwesome; font-size: 18px; position: absolute; right: 32px; top: 48px;}
 .about-tab-right {background-color: rgba(0,0,0,0.8); padding:70px; }
 .about-tab-right .panel-title { background-color: inherit; border: 0 none; color: #fff; font-size: 15px; letter-spacing: 4px; padding: 18px;}
 .about-tab-right .panel-body {background-color: inherit;   }

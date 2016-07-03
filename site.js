@@ -83,9 +83,17 @@ site.metalsmith = {
         '_enable': true,
 
         // collection theo file pattern + test limit
-       
+        
+        
         'hcode-shop':{
             'pattern': 'hcode-shop/**/*.html',
+            'sortBy':  'date',
+            'reverse': true,
+            'limit':10
+            
+        },
+        'hcode-blog':{
+            'pattern': 'hcode-blog/**/*.html',
             'sortBy':  'date',
             'reverse': true,
             'limit':10

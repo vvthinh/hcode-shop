@@ -1,0 +1,75 @@
+{{#extend "default"}} {{#content "main"}} <!-- head section -->
+        <section class="content-top-margin page-title bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                        <!-- page title -->
+                        <h1 class="black-text">Blog - Grid 2 Columns</h1>
+                        <!-- end page title -->
+                        <!-- page title tagline -->
+                        <span class="xs-display-none">Lorem Ipsum is simply dummy text of the printing.</span>
+                        <!-- end title tagline -->
+                        <div class="separator-line margin-three bg-black no-margin-lr sm-margin-top-three sm-margin-bottom-three no-margin-bottom xs-display-none"></div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-12 breadcrumb text-uppercase sm-no-margin-top wow fadeInUp xs-display-none" data-wow-duration="600ms">
+                        <!-- breadcrumb -->
+                        <ul>
+                            <li><a href="blog-grid-2columns.html#">Home</a></li>
+                            <li><a href="blog-grid-2columns.html#">Blog</a></li>
+                            
+                        </ul>
+                        <!-- end breadcrumb -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end head section -->
+
+        <!-- content section -->
+        <section class="wow fadeIn">
+            <div class="container">
+                <div class="row blog-2col">
+              {{#each collections.hcode-blog }}
+                    <!-- post item -->
+                    <div class="col-md-6 col-sm-6 col-xs-6 blog-listing wow fadeInUp" data-wow-duration="300ms">
+                        <div class="blog-image"><a href="/{{path}}"><img src="{{this.image}}" alt=""/></a></div>
+
+                        <div class="blog-details">
+                            <div class="blog-date">POSTED BY <a href="http://localhost:8088/hcode-blog.html">{{this.post}}</a> | {{this.date}}</div>
+                            <div class="blog-title"><a href="/{{path}}">{{this.name}}</a></div>
+                            <div class="blog-short-description">{{this.description}}</div>
+                            <div class="separator-line bg-black no-margin-lr"></div>
+                            <div><a href="http://localhost:8088/hcode-blog.html" class="blog-like"><i class="fa fa-heart-o"></i>Likes</a><a href="blog-grid-2columns.html#" class="blog-share"><i class="fa fa-share-alt"></i>Share</a><a href="blog-grid-2columns.html#" class="comment"><i class="fa fa-comment-o"></i>3 comment(s)</a></div>
+                        </div>
+                    </div>
+                    <!-- end post item -->
+                    {{/each}}
+
+
+                   
+                    
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
+                        <!-- pagination -->
+                        <div class="pagination">
+                            <a href="blog-grid-2columns.html#"><img src="images/arrow-pre-small.png" alt=""/></a>
+                            <a href="blog-grid-2columns.html#">1</a>
+                            <a href="blog-grid-2columns.html#">2</a>
+                            <a href="blog-grid-2columns.html#" class="active">3</a>
+                            <a href="blog-grid-2columns.html#">4</a>
+                            <a href="blog-grid-2columns.html#">5</a>
+                            <a href="blog-grid-2columns.html#"><img src="images/arrow-next-small.png" alt=""/></a>
+                        </div>
+                        <!-- end pagination -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end content section -->
+{{/content}} {{/extend}}
+
+
+
+
